@@ -10,6 +10,16 @@ body {
     overflow: hidden;
 }
 
+.carousel-item {
+    height: 100vh; /* Altura de 100% da tela para o carrossel */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%; /* Garantindo que a imagem cubra toda a área */
+    object-fit: cover; /* Faz com que a imagem mantenha sua proporção */
+}
+
 .hero-text {
     position: absolute;
     bottom: 50px;
