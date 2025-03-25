@@ -37,7 +37,7 @@ body {
     left: 50%; 
     text-align: center;
     color: white;
-     
+    animation: fadeIn 0s ease-in-out;
     background: rgba(51, 51, 51, 0.7); /* Fundo cinza com transparência */
     padding: 20px; /* Espaçamento interno */
     border-radius: 10px; /* Cantos arredondados */
