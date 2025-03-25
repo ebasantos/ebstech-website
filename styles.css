@@ -31,17 +31,7 @@ body {
     padding: 20px; /* Espaçamento interno */
     border-radius: 10px; /* Cantos arredondados */
 }
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+ 
 
 .hero h1 {
     font-size: 3rem;
