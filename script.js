@@ -1,14 +1,20 @@
-// Função para animar a rolagem suave ao clicar nos links do menu
-const scrollLinks = document.querySelectorAll('nav a');
+let currentIndex = 0;
 
-scrollLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = e.target.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        window.scrollTo({
-            top: targetSection.offsetTop - 80,
-            behavior: 'smooth'
-        });
-    });
-});
+const images = document.querySelectorAll('.carousel-images img');
+const totalImages = images.length;
+
+function showSlide(index) {
+    const carouselImages = document.querySelector('.carousel-images');
+    const offset = index * -100; // -100% para mover a imagem
+    carouselImages.style.transform = `translateX(${offset}%)`;
+}
+
+function moveSlide(direction) {
+    currentIndex = (currentIndex + direction + totalImages) % totalImages;
+    showSlide(currentIndex);
+}
+
+// Iniciar o slideshow com um intervalo automático
+setInterval(() => {
+    moveSlide(1);
+}, 5000); // Muda a imagem a cada 5 segundos
