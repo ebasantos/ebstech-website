@@ -34,10 +34,10 @@ body {
 .hero-text {
     position: absolute;
     bottom: 50px;
-    left: 50%; 
+    
     text-align: center;
     color: white;
-    left: 0%;
+   
     transform: translateX(-50%);
     animation: fadeIn 0s ease-in-out;
     background: rgba(51, 51, 51, 0.7); /* Fundo cinza com transparência */
