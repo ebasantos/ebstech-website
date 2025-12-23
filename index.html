@@ -1,723 +1,122 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Drogaria Bethel - Sua farmácia de confiança em Coxipó da Ponte, Cuiabá - MT. Atendimento humanizado, entrega rápida e preços justos. Entre em contato!">
-    <meta name="keywords" content="drogaria, farmácia, medicamentos, Cuiabá, Coxipó da Ponte, entrega de medicamentos, teste de glicemia, aferição de pressão">
-    <meta name="author" content="Drogaria Bethel">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://drogariabethel.com.br/">
-    <meta property="og:title" content="Drogaria Bethel - Sua Farmácia de Confiança">
-    <meta property="og:description" content="Atendimento humanizado, entrega rápida e preços justos. Sua saúde em boas mãos!">
-    <meta property="og:image" content="assets/images/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://drogariabethel.com.br/">
-    <meta property="twitter:title" content="Drogaria Bethel - Sua Farmácia de Confiança">
-    <meta property="twitter:description" content="Atendimento humanizado, entrega rápida e preços justos. Sua saúde em boas mãos!">
-
-    <title>Drogaria Bethel | Farmácia de Confiança em Cuiabá - MT</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon-bethel.png">
-    <link rel="apple-touch-icon" href="assets/images/favicon-bethel.png">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EBS Tech - Inovação em Software & IA</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts: Poppins para títulos e Roboto para corpo -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-bar-left">
-                    <span><i class="fas fa-clock"></i> Seg - Sáb: 8h às 22h | Dom: 8h às 13h e 15h às 20h</span>
-                </div>
-                <div class="top-bar-right">
-                    <a href="https://wa.me/5565992822412" target="_blank" class="whatsapp-link">
-                        <i class="fab fa-whatsapp"></i> (65) 99282-2412
-                    </a>
-                </div>
-            </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">EBS Tech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" 
+              aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+          <!-- Link de Contato direciona para WhatsApp -->
+          <li class="nav-item"><a class="nav-link" href="https://wa.me/5565984193431" target="_blank">Contato</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- Header -->
-    <header class="header" id="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <img src="assets/images/logo-bethel.png" alt="Rede Bethel Farmácias" class="logo-img">
-                </a>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu">
-                    <span class="hamburger"></span>
-                </button>
-
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#inicio" class="nav-link active">Início</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
-                    <li><a href="#localizacao" class="nav-link">Localização</a></li>
-                    <li><a href="#contato" class="nav-link">Contato</a></li>
-                </ul>
-
-                <a href="https://wa.me/5565992822412" target="_blank" class="btn btn-primary header-cta">
-                    <i class="fab fa-whatsapp"></i> Fale Conosco
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Sua Saúde em <span class="highlight">Boas Mãos</span></h1>
-                <p class="hero-subtitle">Há 5 anos cuidando da saúde da comunidade de Coxipó da Ponte com atendimento humanizado, qualidade e preços justos.</p>
-                <div class="hero-buttons">
-                    <a href="https://wa.me/5565992822412" target="_blank" class="btn btn-primary btn-lg">
-                        <i class="fab fa-whatsapp"></i> Peça seu Medicamento
-                    </a>
-                    <a href="#servicos" class="btn btn-outline btn-lg">
-                        <i class="fas fa-heartbeat"></i> Nossos Serviços
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Features Quick -->
-    <section class="features-quick">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck-fast"></i>
-                    </div>
-                    <h3>Entrega Rápida</h3>
-                    <p>Receba seus medicamentos em casa com agilidade</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h3>Atendimento Humanizado</h3>
-                    <p>Cuidamos de você com carinho e dedicação</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tags"></i>
-                    </div>
-                    <h3>Preços Justos</h3>
-                    <p>Qualidade e economia para sua família</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-nurse"></i>
-                    </div>
-                    <h3>Profissionais Qualificados</h3>
-                    <p>Equipe treinada para melhor atendê-lo</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about section" id="sobre">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="assets/images/about-pharmacy.svg" alt="Interior da Drogaria Bethel">
-                    <div class="about-badge">
-                        <span class="years">5</span>
-                        <span class="text">Anos no Bairro</span>
-                    </div>
-                </div>
-                <div class="about-content">
-                    <span class="section-tag">Quem Somos</span>
-                    <h2 class="section-title">Sua Farmácia de Confiança em Coxipó da Ponte</h2>
-                    <p class="about-text">
-                        A <strong>Rede Bethel Farmácias</strong> nasceu do sonho de oferecer um atendimento farmacêutico diferenciado para a comunidade. Há 5 anos no bairro Coxipó da Ponte, em Cuiabá - MT, construímos uma relação de confiança com nossos clientes, baseada em respeito, qualidade e compromisso com a saúde.
-                    </p>
-                    <p class="about-text">
-                        Nossa missão é proporcionar bem-estar e qualidade de vida, oferecendo medicamentos de qualidade, orientação farmacêutica especializada e um atendimento que faz a diferença.
-                    </p>
-                    
-                    <div class="about-values">
-                        <div class="value-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Compromisso com a Saúde</span>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Atendimento Personalizado</span>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Ética e Transparência</span>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Responsabilidade Social</span>
-                        </div>
-                    </div>
-
-                    <a href="#contato" class="btn btn-primary">
-                        <i class="fas fa-comments"></i> Fale com a Gente
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services section" id="servicos">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">O Que Oferecemos</span>
-                <h2 class="section-title">Nossos Serviços</h2>
-                <p class="section-subtitle">Cuidados completos para você e sua família</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-pills"></i>
-                    </div>
-                    <h3>Medicamentos</h3>
-                    <p>Ampla variedade de medicamentos genéricos, similares e de referência com procedência garantida.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-motorcycle"></i>
-                    </div>
-                    <h3>Entrega em Domicílio</h3>
-                    <p>Receba seus medicamentos no conforto da sua casa com rapidez e segurança.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-droplet"></i>
-                    </div>
-                    <h3>Teste de Glicemia</h3>
-                    <p>Monitoramento rápido e preciso dos níveis de glicose no sangue.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-heart-pulse"></i>
-                    </div>
-                    <h3>Aferição de Pressão</h3>
-                    <p>Controle sua pressão arterial com equipamentos modernos e profissionais capacitados.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-syringe"></i>
-                    </div>
-                    <h3>Aplicação de Injeções</h3>
-                    <p>Aplicação segura de medicamentos injetáveis por profissionais qualificados.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3>Perfumaria e Higiene</h3>
-                    <p>Produtos de beleza, higiene pessoal e cuidados com a pele das melhores marcas.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-baby"></i>
-                    </div>
-                    <h3>Produtos Infantis</h3>
-                    <p>Linha completa de fraldas, mamadeiras, chupetas e produtos para bebês.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-doctor"></i>
-                    </div>
-                    <h3>Orientação Farmacêutica</h3>
-                    <p>Atendimento especializado com farmacêuticos prontos para tirar suas dúvidas.</p>
-                </div>
-            </div>
-
-            <div class="services-cta text-center">
-                <p>Precisa de algum medicamento? Entre em contato agora!</p>
-                <a href="https://wa.me/5565992822412" target="_blank" class="btn btn-primary btn-lg">
-                    <i class="fab fa-whatsapp"></i> Compre pelo WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Differentials Section -->
-    <section class="differentials section" id="diferenciais">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">Por Que Nos Escolher</span>
-                <h2 class="section-title">Nossos Diferenciais</h2>
-                <p class="section-subtitle">O que faz da Drogaria Bethel a escolha certa para você</p>
-            </div>
-
-            <div class="differentials-grid">
-                <div class="differential-card">
-                    <div class="differential-number">01</div>
-                    <div class="differential-content">
-                        <h3>Atendimento Humanizado</h3>
-                        <p>Tratamos cada cliente como único, com atenção, paciência e empatia. Aqui você é mais que um cliente, é parte da família Bethel.</p>
-                    </div>
-                </div>
-
-                <div class="differential-card">
-                    <div class="differential-number">02</div>
-                    <div class="differential-content">
-                        <h3>Facilidade de Contato</h3>
-                        <p>Estamos sempre disponíveis para atendê-lo. Ligue, envie uma mensagem no WhatsApp ou venha nos visitar pessoalmente.</p>
-                    </div>
-                </div>
-
-                <div class="differential-card">
-                    <div class="differential-number">03</div>
-                    <div class="differential-content">
-                        <h3>Preços Justos e Acessíveis</h3>
-                        <p>Trabalhamos para oferecer os melhores preços sem comprometer a qualidade dos produtos e serviços.</p>
-                    </div>
-                </div>
-
-                <div class="differential-card">
-                    <div class="differential-number">04</div>
-                    <div class="differential-content">
-                        <h3>Convênios e Descontos</h3>
-                        <p>Aceitamos diversos convênios e oferecemos descontos especiais para nossos clientes. Consulte nossas condições.</p>
-                    </div>
-                </div>
-
-                <div class="differential-card">
-                    <div class="differential-number">05</div>
-                    <div class="differential-content">
-                        <h3>Profissionais Qualificados</h3>
-                        <p>Nossa equipe é formada por profissionais capacitados e em constante atualização para melhor atendê-lo.</p>
-                    </div>
-                </div>
-
-                <div class="differential-card">
-                    <div class="differential-number">06</div>
-                    <div class="differential-content">
-                        <h3>Tradição e Confiança</h3>
-                        <p>Mais de 20 anos de história construída com seriedade, compromisso e dedicação à comunidade.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials section">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">Depoimentos</span>
-                <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
-            </div>
-
-            <div class="testimonials-slider">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Atendimento excelente!!! A melhor da região. Venha pra BETHEL!!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Izabela Quitéria</h4>
-                            <span>Avaliação do Google</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Um ótimo lugar para se comprar atendimento excelente e de qualidade"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Sandriana Souza</h4>
-                            <span>Avaliação do Google</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Ótimo atendimento, preços muito em conta"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Jennifer Mendes</h4>
-                            <span>Avaliação do Google</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Drogaria Bethel a melhor da região. Entrega excelente, atendimento e produtos de qualidade."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Inspirar Agência de Marketing</h4>
-                            <span>Avaliação do Google</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Muito bom atendimento"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Erick Amorim</h4>
-                            <span>Avaliação do Google</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Ótimos preços e atendimento 10"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4>Liegy Andréa</h4>
-                            <span>Avaliação do Google</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section class="location section" id="localizacao">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">Onde Estamos</span>
-                <h2 class="section-title">Nossa Localização</h2>
-                <p class="section-subtitle">Venha nos visitar! Estamos prontos para atendê-lo</p>
-            </div>
-
-            <div class="location-grid">
-                <div class="location-info">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Endereço</h3>
-                            <p>R. L, N° 8 - Coxipó da Ponte<br>Cuiabá - MT, 78096-422</p>
-                        </div>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Horário de Funcionamento</h3>
-                            <p>Segunda a Sábado: 8h às 22h<br>Domingo: 8h às 13h e 15h às 20h</p>
-                        </div>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>WhatsApp / Celular</h3>
-                            <p><a href="https://wa.me/5565992822412" target="_blank">(65) 99282-2412</a></p>
-                        </div>
-                    </div>
-
-                    <a href="https://www.google.com/maps/search/Drogaria+Rede+Bethel+Farmacias+R.+L+N+8+Coxipo+da+Ponte+Cuiaba+MT" target="_blank" class="btn btn-primary btn-block">
-                        <i class="fas fa-route"></i> Traçar Rota
-                    </a>
-                </div>
-
-                <div class="location-map">
-                    <iframe 
-                        src="https://www.google.com/maps?q=Drogaria+Rede+Bethel+Farmacias+R.+L+N+8+Coxipo+da+Ponte+Cuiaba+MT+78096-422+Brasil&output=embed" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Localização Rede Bethel Farmácias">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact section" id="contato">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="section-tag">Fale Conosco</span>
-                <h2 class="section-title">Entre em Contato</h2>
-                <p class="section-subtitle">Estamos prontos para atendê-lo! Tire suas dúvidas ou faça seu pedido</p>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nome Completo *</label>
-                            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" placeholder="seu@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Telefone *</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(65) 99999-9999" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Assunto</label>
-                            <select id="subject" name="subject">
-                                <option value="">Selecione um assunto</option>
-                                <option value="pedido">Fazer um Pedido</option>
-                                <option value="duvida">Tirar uma Dúvida</option>
-                                <option value="orcamento">Solicitar Orçamento</option>
-                                <option value="elogio">Elogio</option>
-                                <option value="sugestao">Sugestão</option>
-                                <option value="outro">Outro Assunto</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Mensagem *</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">
-                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                        </button>
-                    </form>
-                </div>
-
-                <div class="contact-quick">
-                    <h3>Atendimento Rápido</h3>
-                    <p>Prefere falar conosco diretamente? Use os canais abaixo para um atendimento mais rápido:</p>
-
-                    <div class="quick-buttons">
-                        <a href="https://wa.me/5565992822412" target="_blank" class="quick-btn whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                            <div class="quick-btn-content">
-                                <span class="quick-btn-title">WhatsApp / Celular</span>
-                                <span class="quick-btn-text">(65) 99282-2412</span>
-                            </div>
-                        </a>
-
-                        <a href="mailto:contato@drogariabethel.com.br" class="quick-btn email">
-                            <i class="fas fa-envelope"></i>
-                            <div class="quick-btn-content">
-                                <span class="quick-btn-title">E-mail</span>
-                                <span class="quick-btn-text">contato@drogariabethel.com.br</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="contact-info-box">
-                        <h4><i class="fas fa-info-circle"></i> Informações</h4>
-                        <ul>
-                            <li><strong>Endereço:</strong> R. L, N° 8 - Coxipó da Ponte, Cuiabá - MT, 78096-422</li>
-                            <li><strong>Horário:</strong> Seg-Sáb: 8h-22h | Dom: 8h-13h e 15h-20h</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col footer-about">
-                        <img src="assets/images/logo-bethel.png" alt="Rede Bethel Farmácias" class="footer-logo">
-                        <p>Sua farmácia de confiança em Coxipó da Ponte, Cuiabá - MT. Há 5 anos cuidando da saúde da nossa comunidade.</p>
-                        <div class="footer-social">
-                            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://wa.me/5565992822412" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Links Rápidos</h4>
-                        <ul class="footer-links">
-                            <li><a href="#inicio">Início</a></li>
-                            <li><a href="#sobre">Sobre Nós</a></li>
-                            <li><a href="#servicos">Serviços</a></li>
-                            <li><a href="#diferenciais">Diferenciais</a></li>
-                            <li><a href="#localizacao">Localização</a></li>
-                            <li><a href="#contato">Contato</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Nossos Serviços</h4>
-                        <ul class="footer-links">
-                            <li><a href="#servicos">Medicamentos</a></li>
-                            <li><a href="#servicos">Entrega em Domicílio</a></li>
-                            <li><a href="#servicos">Teste de Glicemia</a></li>
-                            <li><a href="#servicos">Aferição de Pressão</a></li>
-                            <li><a href="#servicos">Aplicação de Injeções</a></li>
-                            <li><a href="#servicos">Perfumaria</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Contato</h4>
-                        <ul class="footer-contact">
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>R. L, N° 8 - Coxipó da Ponte<br>Cuiabá - MT, 78096-422</span>
-                            </li>
-                            <li>
-                                <i class="fab fa-whatsapp"></i>
-                                <a href="https://wa.me/5565992822412" target="_blank">(65) 99282-2412</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:contato@drogariabethel.com.br">contato@drogariabethel.com.br</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p>&copy; 
-<a href="https://ebstech.app.br/"> Desenvolvido por EBS Tech </a></p>
-                    <div class="footer-bottom-links">
-                        <a href="#">Política de Privacidade</a>
-                        <a href="#">Termos de Uso</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5565992822412" target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Fale Conosco!</span>
-    </a>
-
-    <!-- Mobile Bottom Bar -->
-    <div class="mobile-bottom-bar">
-        <a href="https://wa.me/5565992822412" target="_blank" class="mobile-bar-btn whatsapp">
-            <i class="fab fa-whatsapp"></i>
-            <span>WhatsApp</span>
-        </a>
-        <a href="#localizacao" class="mobile-bar-btn">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Localização</span>
-        </a>
-        <a href="#contato" class="mobile-bar-btn">
-            <i class="fas fa-envelope"></i>
-            <span>Contato</span>
-        </a>
+  <!-- Seção Hero com Vídeo de Fundo sem overlay preta -->
+  <header id="home" class="hero">
+    <div class="video-container">
+      <video autoplay loop muted playsinline class="hero-video">
+        <source src="video.mp4" type="video/mp4">
+        Seu navegador não suporta o vídeo.
+      </video>
     </div>
+    <!-- Overlay removida para não aplicar background preto -->
+    <!-- <div class="hero-overlay"></div> -->
+    <div class="hero-content container text-center">
+      <h1 class="hero-title">EBS Tech</h1>
+      <p class="hero-subtitle">Inovação em Software &amp; Inteligência Artificial</p>
+      <!-- Botão que direciona para WhatsApp -->
+      <a href="https://wa.me/5565984193431" class="btn btn-outline" target="_blank">Solicite um Orçamento</a>
+    </div>
+  </header>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+  <!-- Seção Sobre -->
+  <section id="about" class="section">
+    <div class="container text-center">
+      <h2 class="section-title">Sobre Nós</h2>
+      <p class="section-text">
+        Somos uma software house que transforma ideias em soluções digitais inovadoras. Desenvolvemos sistemas, integrações, apps, automações e sites com o respaldo da inteligência artificial para impulsionar seu negócio.
+      </p>
+    </div>
+  </section>
 
-    <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+  <!-- Seção Portfólio -->
+  <section id="portfolio" class="section">
+    <div class="container text-center">
+      <h2 class="section-title">Portfólio</h2>
+      <p class="section-text">
+        Descubra nossos projetos que demonstram excelência e inovação.
+      </p>
+      <div class="row">
+        <div class="col-md-4 portfolio-item">
+          <div class="portfolio-card">
+            <i class="fas fa-code fa-3x"></i>
+            <h5 class="portfolio-title">App Money Up Brasil</h5>
+            <img class="rounded" style="width: 200px; height:  200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREamr5n_QwLIpR6cZ-mgWrPIJD1gHc7tBJZsHD9tu7pbYGhHZzurudUwXiNm_3k2QkbVU&usqp=CAU">
+        </div>
+        </div>
+        <div class="col-md-4 portfolio-item">
+          <div class="portfolio-card">
+            <i class="fas fa-mobile-alt fa-3x"></i>
+            <h5 class="portfolio-title">App In GO Driver</h5>
+            <img class="rounded" style="max-width: 100%;height:  425px;" src="ingo.jpg">
+        </div>
+        </div>
+        <div class="col-md-4 portfolio-item">
+          <div class="portfolio-card">
+            <i class="fas fa-robot fa-3x"></i>
+            <h5 class="portfolio-title">Rede Latitude Tech</h5>
+            <img class="rounded" style="width: 220px; height:  200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2_2GoXoiNOiQs2gZntIH1H_j5jZH1FsVW9Q&s">
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Contato: Inovadora, direcionando para WhatsApp -->
+  <section id="contact" class="section">
+    <div class="container text-center">
+      <h2 class="section-title">Contato</h2>
+      <p class="section-text">
+        Fale conosco diretamente pelo WhatsApp e descubra como podemos transformar o seu negócio.
+      </p>
+      <a href="https://wa.me/5565984193431" class="btn btn-outline" target="_blank">Fale Conosco no WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2025 EBS Tech. Todos os direitos reservados.</p>
+      <div class="social-icons">
+        <a href="https://wa.me/5565984193431" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
