@@ -1,122 +1,853 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EBS Tech - Inovação em Software & IA</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Fonts: Poppins para títulos e Roboto para corpo -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Custom CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EBS Tecnologia — Software, IA e Martech para empresas que querem escalar</title>
+  <meta name="description" content="A EBS Tecnologia projeta e constrói software sob medida, agentes de IA, sistemas de automação e infraestrutura martech para transformar operações fragmentadas em máquinas de receita escaláveis.">
+  <meta name="keywords" content="software sob medida, soluções com IA, CRM com IA, automação comercial, martech, integração de sistemas, desenvolvimento de software, automação WhatsApp, tecnologia para vendas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#home">EBS Tech</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" 
-              aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="EBS Tecnologia - Início">
+        <span class="brand-mark">EBS</span><span class="brand-suffix">Tecnologia</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#solucoes" class="nav-link">Soluções</a></li>
+        <li><a href="#produto" class="nav-link">Produtos</a></li>
+        <li><a href="#cases" class="nav-link">Cases</a></li>
+        <li><a href="#processo" class="nav-link">Processo</a></li>
+        <li>
+          <a href="https://wa.me/5565984193431" class="nav-cta" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
+          </a>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navContent">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
-          <!-- Link de Contato direciona para WhatsApp -->
-          <li class="nav-item"><a class="nav-link" href="https://wa.me/5565984193431" target="_blank">Contato</a></li>
-        </ul>
-      </div>
+    </div>
+    <div class="nav-menu" id="navMenu" role="menu">
+      <a href="#solucoes" class="nav-menu-link" role="menuitem">Soluções</a>
+      <a href="#produto" class="nav-menu-link" role="menuitem">Produtos</a>
+      <a href="#cases" class="nav-menu-link" role="menuitem">Cases</a>
+      <a href="#processo" class="nav-menu-link" role="menuitem">Processo</a>
+      <a href="https://wa.me/5565984193431" class="nav-menu-cta" target="_blank" rel="noopener noreferrer" role="menuitem">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
+      </a>
     </div>
   </nav>
 
-  <!-- Seção Hero com Vídeo de Fundo sem overlay preta -->
-  <header id="home" class="hero">
-    <div class="video-container">
-      <video autoplay loop muted playsinline class="hero-video">
-        <source src="video.mp4" type="video/mp4">
-        Seu navegador não suporta o vídeo.
-      </video>
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="grid-overlay"></div>
     </div>
-    <!-- Overlay removida para não aplicar background preto -->
-    <!-- <div class="hero-overlay"></div> -->
-    <div class="hero-content container text-center">
-      <h1 class="hero-title">EBS Tech</h1>
-      <p class="hero-subtitle">Inovação em Software &amp; Inteligência Artificial</p>
-      <!-- Botão que direciona para WhatsApp -->
-      <a href="https://wa.me/5565984193431" class="btn btn-outline" target="_blank">Solicite um Orçamento</a>
-    </div>
-  </header>
 
-  <!-- Seção Sobre -->
-  <section id="about" class="section">
-    <div class="container text-center">
-      <h2 class="section-title">Sobre Nós</h2>
-      <p class="section-text">
-        Somos uma software house que transforma ideias em soluções digitais inovadoras. Desenvolvemos sistemas, integrações, apps, automações e sites com o respaldo da inteligência artificial para impulsionar seu negócio.
+    <div class="hero-float hero-float-left" aria-hidden="true">
+      <div class="float-card float-card-1">
+        <div class="float-card-icon"><i class="fas fa-robot"></i></div>
+        <div class="float-card-body">
+          <span class="float-card-value">+4.200</span>
+          <span class="float-card-label">Leads qualificados/mês</span>
+        </div>
+        <div class="float-card-badge"><i class="fas fa-arrow-trend-up"></i> +38%</div>
+      </div>
+      <div class="float-card float-card-2">
+        <div class="float-card-icon cyan"><i class="fas fa-bolt"></i></div>
+        <div class="float-card-body">
+          <span class="float-card-value">98ms</span>
+          <span class="float-card-label">Resposta do agente IA</span>
+        </div>
+        <div class="float-pulse"></div>
+      </div>
+    </div>
+
+    <div class="hero-float hero-float-right" aria-hidden="true">
+      <div class="float-card float-card-3">
+        <div class="float-card-icon pink"><i class="fas fa-chart-line"></i></div>
+        <div class="float-card-body">
+          <span class="float-card-value">R$ 1,2M</span>
+          <span class="float-card-label">Pipeline gerado</span>
+        </div>
+        <div class="float-card-badge green"><i class="fas fa-arrow-trend-up"></i> +124%</div>
+      </div>
+      <div class="float-card float-card-4">
+        <div class="float-card-icon violet"><i class="fas fa-layer-group"></i></div>
+        <div class="float-card-body">
+          <span class="float-card-value">47</span>
+          <span class="float-card-label">Automações ativas</span>
+        </div>
+        <div class="float-status"><span class="status-dot"></span> Sistema operando</div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Software &amp; IA &amp; Martech
+      </div>
+      <h1 class="hero-title" id="hero-heading">
+        Soluções inteligentes para empresas que querem
+        <span class="gradient-text">escalar com tecnologia</span>
+      </h1>
+      <p class="hero-subtitle">
+        Construímos estratégia sob medida, unindo o melhor da tecnologia com o marketing digital para transformar operações fragmentadas em máquinas de receita escaláveis.
       </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5565984193431" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Agendar diagnóstico
+        </a>
+        <a href="#solucoes" class="btn btn-ghost">
+          Ver soluções <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-value">50+</span>
+          <span class="stat-label">Projetos entregues</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="stat-value">12+</span>
+          <span class="stat-label">Setores atendidos</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="stat-value">98%</span>
+          <span class="stat-label">Clientes satisfeitos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- Seção Portfólio -->
-  <section id="portfolio" class="section">
-    <div class="container text-center">
-      <h2 class="section-title">Portfólio</h2>
-      <p class="section-text">
-        Descubra nossos projetos que demonstram excelência e inovação.
-      </p>
-      <div class="row">
-        <div class="col-md-4 portfolio-item">
-          <div class="portfolio-card">
-            <i class="fas fa-code fa-3x"></i>
-            <h5 class="portfolio-title">App Money Up Brasil</h5>
-            <img class="rounded" style="width: 200px; height:  200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREamr5n_QwLIpR6cZ-mgWrPIJD1gHc7tBJZsHD9tu7pbYGhHZzurudUwXiNm_3k2QkbVU&usqp=CAU">
+  <!-- ===== SOLUÇÕES ===== -->
+  <section id="solucoes" class="section solutions-section" aria-labelledby="solutions-heading">
+    <div class="ambient-glow ambient-glow-left" aria-hidden="true"></div>
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">O que construímos</div>
+        <h2 class="section-title" id="solutions-heading">
+          Tecnologia de ponta em cada <span class="gradient-text">pilar do seu negócio</span>
+        </h2>
+        <p class="section-desc">
+          Cada solução é desenhada para resolver problemas reais de operação, crescimento e inteligência comercial.
+        </p>
+      </div>
+
+      <div class="solutions-grid">
+        <article class="solution-card" tabindex="0">
+          <div class="solution-card-glow" aria-hidden="true"></div>
+          <div class="solution-icon">
+            <i class="fas fa-bullhorn" aria-hidden="true"></i>
+          </div>
+          <h3 class="solution-title">Sistemas Martech</h3>
+          <p class="solution-desc">Integramos captura de leads, CRM, automações e funis em uma operação comercial coesa e inteligente. Nada de ferramentas desconectadas.</p>
+          <ul class="solution-features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Funis de alta conversão</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Integração entre plataformas</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Analytics e inteligência de dados</li>
+          </ul>
+          <div class="solution-tag">Martech</div>
+        </article>
+
+        <article class="solution-card solution-card-cyan" tabindex="0">
+          <div class="solution-card-glow cyan-glow" aria-hidden="true"></div>
+          <div class="solution-icon cyan">
+            <i class="fas fa-microchip" aria-hidden="true"></i>
+          </div>
+          <h3 class="solution-title">Automação com IA</h3>
+          <p class="solution-desc">Agentes de IA que operam 24/7, qualificam leads, respondem no WhatsApp e automatizam fluxos comerciais com precisão e contexto.</p>
+          <ul class="solution-features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Agentes conversacionais IA</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Qualificação automatizada</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Follow-up inteligente</li>
+          </ul>
+          <div class="solution-tag cyan-tag">IA &amp; Automação</div>
+        </article>
+
+        <article class="solution-card solution-card-violet" tabindex="0">
+          <div class="solution-card-glow violet-glow" aria-hidden="true"></div>
+          <div class="solution-icon violet">
+            <i class="fas fa-code" aria-hidden="true"></i>
+          </div>
+          <h3 class="solution-title">Software Sob Medida</h3>
+          <p class="solution-desc">Desenvolvemos plataformas, SaaS, CRMs e sistemas customizados com arquitetura escalável e UX premium que impulsionam crescimento.</p>
+          <ul class="solution-features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Plataformas e SaaS verticais</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> APIs e integrações</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Arquitetura escalável</li>
+          </ul>
+          <div class="solution-tag violet-tag">Engenharia</div>
+        </article>
+
+        <article class="solution-card solution-card-pink" tabindex="0">
+          <div class="solution-card-glow pink-glow" aria-hidden="true"></div>
+          <div class="solution-icon pink">
+            <i class="fas fa-chart-network" aria-hidden="true"></i>
+          </div>
+          <h3 class="solution-title">Infraestrutura de Crescimento</h3>
+          <p class="solution-desc">Conectamos marketing, vendas e tecnologia em um ecossistema digital integrado que produz crescimento previsível e escalável.</p>
+          <ul class="solution-features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Ecossistemas digitais integrados</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Modelos de crescimento escaláveis</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Dashboards de performance</li>
+          </ul>
+          <div class="solution-tag pink-tag">Growth</div>
+        </article>
+
+        <article class="solution-card solution-card-gold" tabindex="0">
+          <div class="solution-card-glow gold-glow" aria-hidden="true"></div>
+          <div class="solution-icon gold">
+            <i class="fas fa-camera" aria-hidden="true"></i>
+          </div>
+          <h3 class="solution-title">Marketing Digital</h3>
+          <p class="solution-desc">Construímos a presença digital completa da sua marca: estratégia de redes sociais, produção de conteúdo e copy persuasivo que gera autoridade e converte.</p>
+          <ul class="solution-features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Estruturação e gestão de redes sociais</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Elaboração e gravação de conteúdos</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Copywriting estratégico e persuasivo</li>
+          </ul>
+          <div class="solution-tag gold-tag">Marketing</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GROWTH IMPACT ===== -->
+  <section id="impacto" class="section impact-section" aria-labelledby="impact-heading">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Como geramos resultado</div>
+        <h2 class="section-title" id="impact-heading">
+          Do primeiro contato à <span class="gradient-text">receita recorrente</span>
+        </h2>
+        <p class="section-desc">
+          Nossa metodologia conecta cada etapa da operação em um sistema inteligente e contínuo de crescimento.
+        </p>
+      </div>
+
+      <div class="impact-flow">
+        <div class="impact-step" tabindex="0">
+          <div class="impact-step-number" aria-hidden="true">01</div>
+          <div class="impact-icon">
+            <i class="fas fa-magnet" aria-hidden="true"></i>
+          </div>
+          <h3 class="impact-step-title">Captura</h3>
+          <p class="impact-step-desc">Sistemas de captura de alta performance que atraem e convertem o público certo.</p>
         </div>
+        <div class="impact-connector" aria-hidden="true">
+          <div class="connector-line"></div>
+          <i class="fas fa-chevron-right"></i>
         </div>
-        <div class="col-md-4 portfolio-item">
-          <div class="portfolio-card">
-            <i class="fas fa-mobile-alt fa-3x"></i>
-            <h5 class="portfolio-title">App In GO Driver</h5>
-            <img class="rounded" style="max-width: 100%;height:  425px;" src="ingo.jpg">
+        <div class="impact-step" tabindex="0">
+          <div class="impact-step-number" aria-hidden="true">02</div>
+          <div class="impact-icon cyan">
+            <i class="fas fa-sliders" aria-hidden="true"></i>
+          </div>
+          <h3 class="impact-step-title">Qualificação</h3>
+          <p class="impact-step-desc">Agentes IA que qualificam leads 24/7 com contexto e inteligência conversacional.</p>
         </div>
+        <div class="impact-connector" aria-hidden="true">
+          <div class="connector-line"></div>
+          <i class="fas fa-chevron-right"></i>
         </div>
-        <div class="col-md-4 portfolio-item">
-          <div class="portfolio-card">
-            <i class="fas fa-robot fa-3x"></i>
-            <h5 class="portfolio-title">Rede Latitude Tech</h5>
-            <img class="rounded" style="width: 220px; height:  200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2_2GoXoiNOiQs2gZntIH1H_j5jZH1FsVW9Q&s">
+        <div class="impact-step" tabindex="0">
+          <div class="impact-step-number" aria-hidden="true">03</div>
+          <div class="impact-icon violet">
+            <i class="fas fa-gears" aria-hidden="true"></i>
+          </div>
+          <h3 class="impact-step-title">Automação</h3>
+          <p class="impact-step-desc">Fluxos automáticos que nutrem e engajam o lead pelo funil sem esforço manual.</p>
         </div>
+        <div class="impact-connector" aria-hidden="true">
+          <div class="connector-line"></div>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="impact-step" tabindex="0">
+          <div class="impact-step-number" aria-hidden="true">04</div>
+          <div class="impact-icon pink">
+            <i class="fas fa-handshake" aria-hidden="true"></i>
+          </div>
+          <h3 class="impact-step-title">Conversão</h3>
+          <p class="impact-step-desc">CRM inteligente e operação comercial que transforma lead em cliente pagante.</p>
+        </div>
+        <div class="impact-connector" aria-hidden="true">
+          <div class="connector-line"></div>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="impact-step impact-step-final" tabindex="0">
+          <div class="impact-step-number" aria-hidden="true">05</div>
+          <div class="impact-icon gold">
+            <i class="fas fa-rocket" aria-hidden="true"></i>
+          </div>
+          <h3 class="impact-step-title">Escala</h3>
+          <p class="impact-step-desc">Infraestrutura que cresce com o negócio. Mais leads, mais automações, mais receita.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção Contato: Inovadora, direcionando para WhatsApp -->
-  <section id="contact" class="section">
-    <div class="container text-center">
-      <h2 class="section-title">Contato</h2>
-      <p class="section-text">
-        Fale conosco diretamente pelo WhatsApp e descubra como podemos transformar o seu negócio.
-      </p>
-      <a href="https://wa.me/5565984193431" class="btn btn-outline" target="_blank">Fale Conosco no WhatsApp</a>
+  <!-- ===== PRODUTO: IMÓVEL CERTO ===== -->
+  <section id="produto" class="section product-section" aria-labelledby="product-heading">
+    <div class="product-bg" aria-hidden="true">
+      <div class="product-glow-1"></div>
+      <div class="product-glow-2"></div>
+    </div>
+    <div class="section-container">
+      <div class="product-layout">
+        <div class="product-info">
+          <div class="section-badge">Nosso Destaque!</div>
+          <h2 class="section-title" id="product-heading">
+            <span class="gradient-text-cyan">Imóvel Certo</span> — O CRM com IA para o mercado imobiliário moderno
+          </h2>
+          <p class="section-desc">
+            Uma plataforma de CRM inteligente construída especificamente para corretores e imobiliárias que querem usar IA, WhatsApp e automação para vender mais, mais rápido.
+          </p>
+          <div class="product-features-grid">
+            <div class="product-feature" tabindex="0">
+              <div class="pf-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+              <div class="pf-body">
+                <h4>Atendimento IA 24/7</h4>
+                <p>Agente IA que qualifica leads, responde dúvidas e agenda visitas automaticamente via WhatsApp.</p>
+              </div>
+            </div>
+            <div class="product-feature" tabindex="0">
+              <div class="pf-icon cyan"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+              <div class="pf-body">
+                <h4>Automação WhatsApp</h4>
+                <p>Fluxos conversacionais inteligentes integrados ao WhatsApp Business API.</p>
+              </div>
+            </div>
+            <div class="product-feature" tabindex="0">
+              <div class="pf-icon violet"><i class="fas fa-building" aria-hidden="true"></i></div>
+              <div class="pf-body">
+                <h4>Gestão de Imóveis e Leads</h4>
+                <p>Portfólio de imóveis integrado ao funil com match inteligente de preferências.</p>
+              </div>
+            </div>
+            <div class="product-feature" tabindex="0">
+              <div class="pf-icon pink"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
+              <div class="pf-body">
+                <h4>Inteligência Comercial</h4>
+                <p>Dashboards em tempo real com métricas de pipeline, conversão e performance.</p>
+              </div>
+            </div>
+            <div class="product-feature" tabindex="0">
+              <div class="pf-icon gold"><i class="fas fa-rotate-right" aria-hidden="true"></i></div>
+              <div class="pf-body">
+                <h4>Follow-up Automático</h4>
+                <p>Sequências de nutrição que mantêm o lead engajado até a conversão.</p>
+              </div>
+            </div>
+            <div class="product-feature" tabindex="0">
+              <div class="pf-icon"><i class="fas fa-link" aria-hidden="true"></i></div>
+              <div class="pf-body">
+                <h4>Integrações Nativas</h4>
+                <p>Conecta portais imobiliários, Meta Ads e ferramentas da sua operação.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-actions">
+            <a href="https://wa.me/5565984193431" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> Conhecer o Imóvel Certo
+            </a>
+            <a href="https://wa.me/5565984193431" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+              Solicitar demonstração
+            </a>
+          </div>
+        </div>
+
+        <div class="product-visual" aria-hidden="true">
+          <div class="product-mockup">
+            <div class="mockup-header">
+              <div class="mockup-dots"><span></span><span></span><span></span></div>
+              <span class="mockup-title">Imóvel Certo — CRM</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-sidebar">
+                <div class="sidebar-item active"><i class="fas fa-house"></i></div>
+                <div class="sidebar-item"><i class="fas fa-users"></i></div>
+                <div class="sidebar-item"><i class="fas fa-robot"></i></div>
+                <div class="sidebar-item"><i class="fas fa-chart-bar"></i></div>
+                <div class="sidebar-item"><i class="fab fa-whatsapp"></i></div>
+              </div>
+              <div class="mockup-main">
+                <div class="mockup-pipeline">
+                  <div class="pipeline-col">
+                    <div class="pipeline-col-header">Novos Leads</div>
+                    <div class="pipeline-card"><div class="p-name">João Silva</div><div class="p-tag">Aptos 3q</div></div>
+                    <div class="pipeline-card"><div class="p-name">Ana Costa</div><div class="p-tag">Casas</div></div>
+                    <div class="pipeline-card"><div class="p-name">Pedro Ramos</div><div class="p-tag">Comercial</div></div>
+                  </div>
+                  <div class="pipeline-col">
+                    <div class="pipeline-col-header cyan-header">Em Qualificação</div>
+                    <div class="pipeline-card cyan-card"><div class="p-name">Maria L.</div><div class="p-tag">R$ 500k</div></div>
+                    <div class="pipeline-card cyan-card"><div class="p-name">Carlos M.</div><div class="p-tag">R$ 800k</div></div>
+                  </div>
+                  <div class="pipeline-col">
+                    <div class="pipeline-col-header violet-header">Propostas</div>
+                    <div class="pipeline-card violet-card"><div class="p-name">Fernanda T.</div><div class="p-tag">🔥 Quente</div></div>
+                  </div>
+                </div>
+                <div class="mockup-metrics">
+                  <div class="mini-metric"><span class="mm-value">89%</span><span class="mm-label">Resposta IA</span></div>
+                  <div class="mini-metric"><span class="mm-value cyan-val">24h</span><span class="mm-label">Qualificação</span></div>
+                  <div class="mini-metric"><span class="mm-value violet-val">32</span><span class="mm-label">Leads hoje</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-mockup-glow"></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2025 EBS Tech. Todos os direitos reservados.</p>
-      <div class="social-icons">
-        <a href="https://wa.me/5565984193431" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <!-- ===== CASES ===== -->
+  <section id="cases" class="section cases-section" aria-labelledby="cases-heading">
+    <div class="ambient-glow ambient-glow-right" aria-hidden="true"></div>
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Trabalhos selecionados</div>
+        <h2 class="section-title" id="cases-heading">
+          Projetos que <span class="gradient-text">provam nossa execução</span>
+        </h2>
+        <p class="section-desc">Não apenas prometemos resultados — construímos e entregamos.</p>
       </div>
+
+      <div class="cases-grid">
+        <article class="case-card case-card-featured" tabindex="0">
+          <div class="case-category">CRM com IA · Imobiliário</div>
+          <h3 class="case-title">Imóvel Certo</h3>
+          <p class="case-desc">Plataforma SaaS de CRM imobiliário com agente de IA, automação WhatsApp e inteligência comercial para corretores e imobiliárias.</p>
+          <div class="case-results">
+            <div class="case-result"><span class="cr-value">+89%</span><span class="cr-label">Taxa de resposta</span></div>
+            <div class="case-result"><span class="cr-value">24/7</span><span class="cr-label">Atendimento IA</span></div>
+            <div class="case-result"><span class="cr-value">3x</span><span class="cr-label">Mais conversões</span></div>
+          </div>
+          <div class="case-stack">
+            <span>React</span><span>Node.js</span><span>IA Conversacional</span><span>WhatsApp API</span>
+          </div>
+        </article>
+
+        <article class="case-card" tabindex="0">
+          <div class="case-category">App Mobile · Finanças</div>
+          <h3 class="case-title">Money Up Brasil</h3>
+          <p class="case-desc">Aplicativo de gestão financeira pessoal com dashboards analíticos, metas inteligentes e insights automatizados para usuários brasileiros.</p>
+          <div class="case-stack">
+            <span>React Native</span><span>Firebase</span><span>Analytics</span>
+          </div>
+        </article>
+
+        <article class="case-card" tabindex="0">
+          <div class="case-category">App Mobile · Mobilidade</div>
+          <h3 class="case-title">In GO Driver</h3>
+          <p class="case-desc">Plataforma de mobilidade urbana com app para motoristas e passageiros, rastreamento em tempo real e operação automatizada.</p>
+          <div class="case-stack">
+            <span>Flutter</span><span>Google Maps API</span><span>Real-time DB</span>
+          </div>
+        </article>
+
+        <article class="case-card" tabindex="0">
+          <div class="case-category">Rede de Parceiros · Tech</div>
+          <h3 class="case-title">Rede Latitude Tech</h3>
+          <p class="case-desc">Ecossistema digital para rede de revendedores com CRM, gestão de pedidos e painel de performance integrado.</p>
+          <div class="case-stack">
+            <span>Next.js</span><span>CRM Custom</span><span>Integração ERP</span>
+          </div>
+        </article>
+
+        <article class="case-card case-card-bethel" tabindex="0">
+          <div class="case-card-thumb" aria-hidden="true">
+            <img
+              src="https://drogariabethel.com.br/assets/images/logo-bethel.png"
+              alt="Logo Drogaria Bethel"
+              class="case-thumb-logo"
+              loading="lazy"
+            >
+            <div class="case-thumb-overlay">
+              <a href="https://drogariabethel.com.br/" target="_blank" rel="noopener noreferrer" class="case-thumb-link" tabindex="-1" aria-hidden="true">
+                <i class="fas fa-arrow-up-right-from-square"></i> Ver site
+              </a>
+            </div>
+          </div>
+          <div class="case-category">Site Institucional · Saúde &amp; Farmácia</div>
+          <h3 class="case-title">Drogaria Bethel</h3>
+          <p class="case-desc">Site institucional para a Rede Bethel Farmácias com catálogo de serviços, integração WhatsApp, depoimentos e formulário de contato. Presença digital profissional para farmácia com 5 anos de atuação em Cuiabá-MT.</p>
+          <div class="case-stack">
+            <span>HTML/CSS/JS</span><span>WhatsApp API</span><span>SEO Local</span><span>Design Responsivo</span>
+          </div>
+          <a href="https://drogariabethel.com.br/" class="case-visit-link" target="_blank" rel="noopener noreferrer">
+            Visitar site <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <article class="case-card case-card-geo" tabindex="0">
+          <div class="case-card-thumb case-thumb-img" aria-hidden="true">
+            <img
+              src="https://mmgeologia.com.br/assets/hero-banner-DgVDwktr.jpg"
+              alt="MM Geologia"
+              class="case-thumb-full"
+              loading="lazy"
+            >
+            <div class="case-thumb-overlay">
+              <a href="https://mmgeologia.com.br/" target="_blank" rel="noopener noreferrer" class="case-thumb-link" tabindex="-1" aria-hidden="true">
+                <i class="fas fa-arrow-up-right-from-square"></i> Ver site
+              </a>
+            </div>
+          </div>
+          <div class="case-category">Site Institucional · Geologia &amp; Meio Ambiente</div>
+          <h3 class="case-title">MM Geologia</h3>
+          <p class="case-desc">Site institucional moderno para empresa de consultoria geológica e ambiental, com portfólio de projetos, catálogo de serviços, SEO técnico e integração WhatsApp para captação de orçamentos.</p>
+          <div class="case-stack">
+            <span>React</span><span>Vite</span><span>SEO Técnico</span><span>Design Responsivo</span>
+          </div>
+          <a href="https://mmgeologia.com.br/" class="case-visit-link" target="_blank" rel="noopener noreferrer">
+            Visitar site <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <article class="case-card case-card-licita" tabindex="0">
+          <div class="case-card-thumb case-thumb-dark" aria-hidden="true">
+            <div class="licita-mockup-icon"><i class="fas fa-file-contract"></i></div>
+            <div class="licita-badge">Plataforma SaaS</div>
+            <div class="case-thumb-overlay">
+              <a href="https://licitamaster.com.br/" target="_blank" rel="noopener noreferrer" class="case-thumb-link" tabindex="-1" aria-hidden="true">
+                <i class="fas fa-arrow-up-right-from-square"></i> Acessar
+              </a>
+            </div>
+          </div>
+          <div class="case-category">Sistema SaaS · Licitações &amp; Setor Público</div>
+          <h3 class="case-title">Licita Master</h3>
+          <p class="case-desc">Plataforma SaaS de gestão inteligente de licitações públicas. Sistema completo para acompanhamento de editais, controle de prazos, documentação e gestão de oportunidades no mercado público.</p>
+          <div class="case-stack">
+            <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Automação de editais</span>
+          </div>
+          <a href="https://licitamaster.com.br/" class="case-visit-link case-visit-link-licita" target="_blank" rel="noopener noreferrer">
+            Acessar plataforma <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NA MÍDIA ===== -->
+  <section id="midia" class="section press-section" aria-labelledby="press-heading">
+    <div class="press-bg" aria-hidden="true">
+      <div class="press-glow"></div>
+    </div>
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Na mídia</div>
+        <h2 class="section-title" id="press-heading">
+          Nossa tecnologia em destaque na <span class="gradient-text">grande imprensa</span>
+        </h2>
+        <p class="section-desc">O trabalho da EBS Tecnologia ultrapassa o código — impacta mercados e ganha espaço nas maiores publicações do Brasil.</p>
+      </div>
+
+      <div class="press-featured">
+        <div class="press-outlet-badge">
+          <span class="press-outlet-dot" aria-hidden="true"></span>
+          <span class="press-outlet-name">Metrópoles</span>
+          <span class="press-outlet-sep">·</span>
+          <span class="press-outlet-section">Negócios</span>
+        </div>
+
+        <div class="press-card" role="article">
+          <div class="press-card-inner">
+            <div class="press-card-left">
+              <div class="press-icon-wrap" aria-hidden="true">
+                <i class="fas fa-globe"></i>
+                <div class="press-icon-ring"></div>
+              </div>
+              <div class="press-tag-row">
+                <span class="press-tag">Fintech</span>
+                <span class="press-tag press-tag-cyan">Pagamentos</span>
+                <span class="press-tag press-tag-violet">Inovação</span>
+              </div>
+              <h3 class="press-headline">
+                "Empresa cria Pix internacional com tarifa menor que a do cartão"
+              </h3>
+              <p class="press-summary">
+                A equipe de engenharia da <strong>EBS Tecnologia</strong> está no centro do desenvolvimento dessa solução pioneira: um sistema de <strong>Pix internacional</strong> que permite transferências entre Brasil e exterior com tarifas significativamente menores do que as cobradas pelos cartões de crédito tradicionais. Uma ruptura real no mercado de pagamentos globais.
+              </p>
+              <div class="press-meta">
+                <span class="press-meta-item"><i class="fas fa-newspaper" aria-hidden="true"></i> Metrópoles</span>
+                <span class="press-meta-item"><i class="fas fa-tag" aria-hidden="true"></i> Negócios &amp; Tecnologia</span>
+              </div>
+              <a
+                href="https://www.metropoles.com/negocios/empresa-cria-pix-internacional-com-tarifa-menor-que-a-do-cartao"
+                class="btn btn-primary press-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Ler matéria completa
+              </a>
+            </div>
+
+            <div class="press-card-right" aria-hidden="true">
+              <div class="press-visual">
+                <div class="pv-header">
+                  <div class="pv-dots"><span></span><span></span><span></span></div>
+                  <span class="pv-label">Pix Internacional</span>
+                </div>
+                <div class="pv-body">
+                  <div class="pv-flow">
+                    <div class="pv-node pv-node-br">
+                      <i class="fas fa-flag"></i>
+                      <span>Brasil</span>
+                    </div>
+                    <div class="pv-arrow">
+                      <div class="pv-line"></div>
+                      <div class="pv-line-anim"></div>
+                      <i class="fas fa-bolt pv-bolt"></i>
+                    </div>
+                    <div class="pv-node pv-node-global">
+                      <i class="fas fa-globe-americas"></i>
+                      <span>Internacional</span>
+                    </div>
+                  </div>
+                  <div class="pv-comparison">
+                    <div class="pv-comp-row">
+                      <span class="pv-comp-label">Cartão internacional</span>
+                      <div class="pv-bar pv-bar-red"><div class="pv-bar-fill" style="width:100%"></div></div>
+                      <span class="pv-comp-val red-val">6,38%</span>
+                    </div>
+                    <div class="pv-comp-row">
+                      <span class="pv-comp-label">Pix Internacional</span>
+                      <div class="pv-bar pv-bar-green"><div class="pv-bar-fill green-fill" style="width:32%"></div></div>
+                      <span class="pv-comp-val green-val">~1,5%</span>
+                    </div>
+                  </div>
+                  <div class="pv-badge-row">
+                    <span class="pv-badge">EBS Tech</span>
+                    <span class="pv-badge pv-badge-cyan">Engenharia</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESSO ===== -->
+  <section id="processo" class="section process-section" aria-labelledby="process-heading">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Nossa metodologia</div>
+        <h2 class="section-title" id="process-heading">
+          Como transformamos visão em <span class="gradient-text">sistema funcionando</span>
+        </h2>
+        <p class="section-desc">Um processo estruturado e inteligente, do diagnóstico à escala.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step" tabindex="0">
+          <div class="ps-number" aria-hidden="true">01</div>
+          <div class="ps-icon"><i class="fas fa-stethoscope" aria-hidden="true"></i></div>
+          <div class="ps-body">
+            <h3>Diagnóstico</h3>
+            <p>Mapeamos gargalos reais, pontos de perda de receita e oportunidades de crescimento com tecnologia.</p>
+          </div>
+        </div>
+        <div class="process-step" tabindex="0">
+          <div class="ps-number" aria-hidden="true">02</div>
+          <div class="ps-icon cyan"><i class="fas fa-compass-drafting" aria-hidden="true"></i></div>
+          <div class="ps-body">
+            <h3>Design Estratégico</h3>
+            <p>Desenhamos a arquitetura do sistema, o produto e a jornada do usuário com foco em resultado e escala.</p>
+          </div>
+        </div>
+        <div class="process-step" tabindex="0">
+          <div class="ps-number" aria-hidden="true">03</div>
+          <div class="ps-icon violet"><i class="fas fa-vector-square" aria-hidden="true"></i></div>
+          <div class="ps-body">
+            <h3>UX e Arquitetura de Produto</h3>
+            <p>Interfaces premium e arquitetura técnica robusta que garantem performance e experiência de alto nível.</p>
+          </div>
+        </div>
+        <div class="process-step" tabindex="0">
+          <div class="ps-number" aria-hidden="true">04</div>
+          <div class="ps-icon pink"><i class="fas fa-code" aria-hidden="true"></i></div>
+          <div class="ps-body">
+            <h3>Desenvolvimento</h3>
+            <p>Engenharia sólida com código limpo, escalável e testado. Entregamos o que prometemos.</p>
+          </div>
+        </div>
+        <div class="process-step" tabindex="0">
+          <div class="ps-number" aria-hidden="true">05</div>
+          <div class="ps-icon gold"><i class="fas fa-brain" aria-hidden="true"></i></div>
+          <div class="ps-body">
+            <h3>Camada de IA e Automação</h3>
+            <p>Integramos IA e automações para que o sistema trabalhe por você — 24 horas, 7 dias.</p>
+          </div>
+        </div>
+        <div class="process-step" tabindex="0">
+          <div class="ps-number" aria-hidden="true">06</div>
+          <div class="ps-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+          <div class="ps-body">
+            <h3>Otimização e Escala</h3>
+            <p>Monitoramos métricas, ajustamos o sistema e escalamos o que funciona. Crescimento contínuo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AUTORIDADE / STACK ===== -->
+  <section id="autoridade" class="section authority-section" aria-labelledby="authority-heading">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Por que a EBS Tech</div>
+        <h2 class="section-title" id="authority-heading">
+          Especialistas em <span class="gradient-text">tecnologia que gera negócio</span>
+        </h2>
+      </div>
+
+      <div class="authority-grid">
+        <div class="authority-card" tabindex="0">
+          <div class="auth-icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
+          <h3>IA Aplicada a Negócios</h3>
+          <p>Não implementamos IA por tendência. Integramos inteligência artificial onde ela gera resultado real: atendimento, qualificação e decisão.</p>
+        </div>
+        <div class="authority-card" tabindex="0">
+          <div class="auth-icon cyan"><i class="fas fa-arrows-rotate" aria-hidden="true"></i></div>
+          <h3>Automação Comercial</h3>
+          <p>Criamos fluxos que eliminam o trabalho manual repetitivo, reduzem o ciclo de vendas e aumentam a capacidade operacional.</p>
+        </div>
+        <div class="authority-card" tabindex="0">
+          <div class="auth-icon violet"><i class="fas fa-cube" aria-hidden="true"></i></div>
+          <h3>Produto, Não Serviço</h3>
+          <p>Pensamos como product builders. O Imóvel Certo é prova disso: um SaaS vertical completo, construído pela EBS Tech do zero.</p>
+        </div>
+        <div class="authority-card" tabindex="0">
+          <div class="auth-icon pink"><i class="fas fa-dollar-sign" aria-hidden="true"></i></div>
+          <h3>Martech com Propósito</h3>
+          <p>Conectamos marketing e tecnologia com foco em receita. Criamos sistemas de aquisição e conversão escaláveis.</p>
+        </div>
+      </div>
+
+      <div class="stack-section">
+        <div class="stack-label">Stack &amp; Especialidades</div>
+        <div class="stack-badges">
+          <span class="stack-badge">React</span>
+          <span class="stack-badge">Angular</span>
+          <span class="stack-badge">Next.js</span>
+          <span class="stack-badge">Node.js</span>
+          <span class="stack-badge">.NET</span>
+          <span class="stack-badge">Spring Boot</span>
+          <span class="stack-badge">Python</span>
+          <span class="stack-badge">React Native</span>
+          <span class="stack-badge">Flutter</span>
+          <span class="stack-badge">OpenAI API</span>
+          <span class="stack-badge">WhatsApp API</span>
+          <span class="stack-badge">Supabase</span>
+          <span class="stack-badge">PostgreSQL</span>
+          <span class="stack-badge">Redis</span>
+          <span class="stack-badge">AWS</span>
+          <span class="stack-badge">Docker</span>
+          <span class="stack-badge">N8N</span>
+          <span class="stack-badge">Make</span>
+          <span class="stack-badge">Meta Ads API</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section id="contato" class="section cta-section" aria-labelledby="cta-heading">
+    <div class="cta-bg" aria-hidden="true">
+      <div class="cta-glow-1"></div>
+      <div class="cta-glow-2"></div>
+    </div>
+    <div class="section-container">
+      <div class="cta-content">
+        <div class="section-badge">Pronto para o próximo nível?</div>
+        <h2 class="cta-title" id="cta-heading">
+          Seu negócio não precisa de mais ferramentas desconectadas.
+          <span class="gradient-text">Precisa de um sistema inteligente.</span>
+        </h2>
+        <p class="cta-desc">
+          Se o seu marketing gera leads, a EBS Tecnologia transforma isso em operação, automação e receita. Agende um diagnóstico gratuito e descubra onde a tecnologia pode transformar seu negócio.
+        </p>
+        <div class="cta-actions">
+          <a href="https://wa.me/5565984193431" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
+          </a>
+          <a href="https://wa.me/5565984193431" class="btn btn-secondary btn-lg" target="_blank" rel="noopener noreferrer">
+            Agendar diagnóstico gratuito
+          </a>
+        </div>
+        <div class="cta-trust">
+          <span><i class="fas fa-shield-check" aria-hidden="true"></i> Diagnóstico 100% gratuito</span>
+          <span><i class="fas fa-clock" aria-hidden="true"></i> Resposta em até 2h</span>
+          <span><i class="fas fa-handshake" aria-hidden="true"></i> Sem compromisso</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-brand">
+          <span class="brand-mark">EBS</span><span class="brand-suffix">Tech</span>
+        </a>
+        <p>Software, IA e Martech para empresas que querem escalar com tecnologia de verdade.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/5565984193431" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Soluções</h4>
+          <a href="#solucoes">Sistemas Martech</a>
+          <a href="#solucoes">Automação com IA</a>
+          <a href="#solucoes">Software Sob Medida</a>
+          <a href="#solucoes">Infraestrutura de Crescimento</a>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <a href="#cases">Cases</a>
+          <a href="#midia">Na Mídia</a>
+          <a href="#processo">Processo</a>
+          <a href="#produto">Imóvel Certo</a>
+          <a href="https://drogariabethel.com.br/" target="_blank" rel="noopener noreferrer">Drogaria Bethel</a>
+          <a href="https://mmgeologia.com.br/" target="_blank" rel="noopener noreferrer">MM Geologia</a>
+          <a href="https://licitamaster.com.br/" target="_blank" rel="noopener noreferrer">Licita Master</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <a href="https://wa.me/5565984193431" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="#contato">Diagnóstico Gratuito</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 EBS Tech. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
