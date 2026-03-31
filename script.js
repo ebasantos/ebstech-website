@@ -1,209 +1,266 @@
 /* ============================================================
-   EBS TECH — Main Script
-   Premium Dark Futuristic · Software · IA · Martech
+   EBS TECH — Script v3
+   Dark Editorial · Blueprint · 2025
 ============================================================ */
-
 (() => {
   'use strict';
 
-  // ── Navbar: scroll effect ─────────────────────────────────
-  const navbar = document.getElementById('navbar');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canHover = window.matchMedia('(hover: hover)').matches;
 
-  function handleNavbarScroll() {
-    if (window.scrollY > 30) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+  // ── Custom Cursor ─────────────────────────────────────────
+  if (canHover && !reduced) {
+    const cursor     = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
+
+    if (cursor && cursorRing) {
+      let mx = -100, my = -100;
+      let rx = -100, ry = -100;
+
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX;
+        my = e.clientY;
+        cursor.style.left = mx + 'px';
+        cursor.style.top  = my + 'px';
+      });
+
+      // Ring lags behind cursor
+      function animRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        cursorRing.style.left = rx + 'px';
+        cursorRing.style.top  = ry + 'px';
+        requestAnimationFrame(animRing);
+      }
+      animRing();
+
+      // Hover states
+      const hoverEls = document.querySelectorAll('a, button, [tabindex="0"], .bp-layer, .bento-card');
+      hoverEls.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.classList.add('is-hovering');
+          cursorRing.classList.add('is-hovering');
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.classList.remove('is-hovering');
+          cursorRing.classList.remove('is-hovering');
+        });
+      });
     }
+  } else {
+    // Hide cursor elements if no hover support
+    const c = document.getElementById('cursor');
+    const r = document.getElementById('cursorRing');
+    if (c) c.style.display = 'none';
+    if (r) r.style.display = 'none';
   }
 
-  window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-  handleNavbarScroll();
+  // ── Navbar ────────────────────────────────────────────────
+  const nav = document.getElementById('nav');
+  const handleScroll = () => nav?.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 
-  // ── Mobile nav toggle ──────────────────────────────────────
-  const navToggle = document.getElementById('navToggle');
-  const navMenu   = document.getElementById('navMenu');
+  // Mobile nav
+  const burger   = document.getElementById('navBurger');
+  const navLinks = document.getElementById('navLinks');
 
-  navToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
+  burger?.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
   });
 
-  // Close menu when a link inside it is clicked
-  navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
+  navLinks?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger?.setAttribute('aria-expanded', 'false');
     });
   });
 
-  // ── Smooth scroll for hash links ───────────────────────────
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+  // ── Smooth scroll ─────────────────────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      const offset = 80; // navbar height
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
 
-  // ── Scroll Reveal ─────────────────────────────────────────
-  const revealElements = document.querySelectorAll(
-    '.solution-card, .impact-step, .product-feature, .case-card, .process-step, .authority-card, .stack-badge, .hero-stat, .section-header, .press-card, .press-outlet-badge'
-  );
-
-  revealElements.forEach((el, i) => {
-    el.classList.add('reveal');
-    // Stagger delay for grid items
-    const delay = (i % 4) * 80;
-    el.style.transitionDelay = `${delay}ms`;
-  });
-
-  const revealObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-  );
-
-  revealElements.forEach(el => revealObserver.observe(el));
-
-  // ── Active nav link on scroll ──────────────────────────────
-  const sections  = document.querySelectorAll('section[id], header[id]');
-  const navLinks  = document.querySelectorAll('.nav-link');
-
-  function updateActiveLink() {
-    const scrollMid = window.scrollY + window.innerHeight / 2;
-    let activeId = '';
-
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      if (scrollMid >= top) {
-        activeId = section.id;
+  // ── Intersection Observer (reveal) ───────────────────────
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObs.unobserve(entry.target);
       }
     });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href')?.replace('#', '');
-      link.style.color = href === activeId ? 'var(--text-primary)' : '';
+  document.querySelectorAll('.reveal-up, .reveal-card').forEach(el => revealObs.observe(el));
+
+  // ── Counter Animation ─────────────────────────────────────
+  function countUp(el) {
+    if (reduced) { el.textContent = el.dataset.count + (el.dataset.suffix || ''); return; }
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const dur    = 1600;
+    const start  = performance.now();
+
+    const tick = now => {
+      const p  = Math.min((now - start) / dur, 1);
+      const e  = 1 - Math.pow(1 - p, 4);
+      const v  = target * e;
+      el.textContent = (String(target).includes('.') ? v.toFixed(1) : Math.round(v)) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      countUp(e.target);
+      counterObs.unobserve(e.target);
     });
-  }
+  }, { threshold: 0.8 });
 
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 
-  // ── Float cards subtle parallax ────────────────────────────
-  const floatCards = document.querySelectorAll('.float-card');
+  // ── Blueprint Stack Diagram ───────────────────────────────
+  const diagram   = document.getElementById('bpDiagram');
+  const detail    = document.getElementById('bpDetail');
+  const layers    = document.querySelectorAll('.bp-layer');
 
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.addEventListener('mousemove', e => {
-      const cx = window.innerWidth  / 2;
-      const cy = window.innerHeight / 2;
-      const dx = (e.clientX - cx) / cx; // -1 to 1
-      const dy = (e.clientY - cy) / cy; // -1 to 1
-
-      floatCards.forEach((card, i) => {
-        const depth = (i % 2 === 0) ? 6 : 10;
-        const tx = dx * depth;
-        const ty = dy * depth;
-        card.style.transform = `translate(${tx}px, ${ty}px)`;
-      });
-    });
-  }
-
-  // ── Animated counter for stats ─────────────────────────────
-  function animateCounter(el, target, suffix = '') {
-    const duration = 1800;
-    const start    = performance.now();
-    const isFloat  = target.toString().includes('.');
-    const numTarget = parseFloat(target);
-
-    function update(now) {
-      const elapsed  = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const ease     = 1 - Math.pow(1 - progress, 4); // easeOutQuart
-      const current  = numTarget * ease;
-      el.textContent = (isFloat ? current.toFixed(1) : Math.round(current)) + suffix;
-      if (progress < 1) requestAnimationFrame(update);
-    }
-
-    requestAnimationFrame(update);
-  }
-
-  const statsObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const raw = el.dataset.count;
-        if (!raw) return;
-        const suffix = el.dataset.suffix || '';
-        animateCounter(el, raw, suffix);
-        statsObserver.unobserve(el);
-      });
+  const layerData = [
+    {
+      index: 'L6 / TOPO',
+      name: 'Resultados & Escala',
+      desc: 'O output de todo o sistema. Revenue crescente, KPIs claros e crescimento contínuo que se autofinancia. É aqui que o investimento vira retorno mensurável.'
     },
-    { threshold: 0.7 }
-  );
+    {
+      index: 'L5 / MARTECH',
+      name: 'Martech & CRM',
+      desc: 'A camada de captura e relacionamento. Funis inteligentes, automação de marketing e gestão de leads que alimenta o pipeline de vendas com qualidade.'
+    },
+    {
+      index: 'L4 / INTELIGÊNCIA',
+      name: 'Agentes de IA',
+      desc: 'O cérebro do sistema. Agentes que qualificam leads, tomam decisões e atendem clientes 24/7 com qualidade humana — sem custo marginal por interação.'
+    },
+    {
+      index: 'L3 / AUTOMAÇÃO',
+      name: 'Automação Inteligente',
+      desc: 'Os nervos da operação. Workflows que conectam sistemas, eliminam tarefas manuais e garantem que nada caia entre as rachaduras do processo.'
+    },
+    {
+      index: 'L2 / SOFTWARE',
+      name: 'Software Sob Medida',
+      desc: 'A interface da empresa com a realidade. Plataformas, dashboards e sistemas construídos para o jeito único que seu negócio opera — sem compromissos genéricos.'
+    },
+    {
+      index: 'L1 / BASE',
+      name: 'Infraestrutura & Dados',
+      desc: 'A fundação de tudo. APIs robustas, banco de dados bem modelado, integrações confiáveis. Um stack fraco aqui torna tudo acima frágil e caro de manter.'
+    }
+  ];
 
-  document.querySelectorAll('[data-count]').forEach(el => statsObserver.observe(el));
-
-  // ── Card tilt effect on hover (desktop only) ───────────────
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
-      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.solution-card, .case-card, .process-step, .authority-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const cx = rect.width  / 2;
-        const cy = rect.height / 2;
-        const rotX = ((y - cy) / cy) * -4;
-        const rotY = ((x - cx) / cx) * 4;
-        card.style.transform = `translateY(-4px) perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  // Animate layers in on scroll
+  if (diagram) {
+    const diagObs = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      layers.forEach((layer, i) => {
+        setTimeout(() => {
+          layer.classList.add('revealed');
+        }, i * 100);
       });
+      diagObs.unobserve(diagram);
+    }, { threshold: 0.25 });
 
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-      });
+    diagObs.observe(diagram);
+  }
+
+  // Layer hover/focus → detail panel
+  layers.forEach((layer, i) => {
+    const idx = parseInt(layer.dataset.layer);
+    const data = layerData[idx];
+
+    const showDetail = () => {
+      layers.forEach(l => l.classList.remove('active'));
+      layer.classList.add('active');
+      if (detail && data) {
+        detail.classList.add('has-layer');
+        detail.querySelector('.bpd-index').textContent = data.index;
+        detail.querySelector('.bpd-name').textContent  = data.name;
+        detail.querySelector('.bpd-desc').textContent  = data.desc;
+      }
+    };
+
+    const hideDetail = () => {
+      layer.classList.remove('active');
+      if (detail) {
+        detail.classList.remove('has-layer');
+        detail.querySelector('.bpd-index').textContent = 'SELECIONE UMA CAMADA';
+        detail.querySelector('.bpd-name').textContent  = 'Passe o mouse sobre as camadas';
+        detail.querySelector('.bpd-desc').textContent  = 'Cada camada do stack representa um componente crítico do seu sistema de crescimento.';
+      }
+    };
+
+    layer.addEventListener('mouseenter', showDetail);
+    layer.addEventListener('mouseleave', hideDetail);
+    layer.addEventListener('focus',      showDetail);
+    layer.addEventListener('blur',       hideDetail);
+  });
+
+  // ── Terminal typewriter ───────────────────────────────────
+  if (!reduced) {
+    const tLines = document.querySelectorAll('#terminalBody .t-line');
+    tLines.forEach((line, i) => {
+      line.style.opacity = '0';
+      line.style.transform = 'translateY(4px)';
+      line.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+      setTimeout(() => {
+        line.style.opacity = '1';
+        line.style.transform = 'translateY(0)';
+      }, 800 + i * 110);
     });
   }
 
-  // ── Mock "typing" animation for pipeline cards ─────────────
-  const pipelineCards = document.querySelectorAll('.pipeline-card');
-  let   cardIndex = 0;
+  // ── Active nav link ───────────────────────────────────────
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navAnchors = document.querySelectorAll('.nav-link');
 
-  function cycleCardHighlight() {
-    pipelineCards.forEach(c => c.style.opacity = '0.85');
-    if (pipelineCards[cardIndex]) {
-      pipelineCards[cardIndex].style.opacity = '1';
-      pipelineCards[cardIndex].style.transform = 'scale(1.03)';
-      setTimeout(() => {
-        if (pipelineCards[cardIndex]) pipelineCards[cardIndex].style.transform = '';
-      }, 600);
-    }
-    cardIndex = (cardIndex + 1) % pipelineCards.length;
+  window.addEventListener('scroll', () => {
+    const mid = window.scrollY + window.innerHeight / 2;
+    let activeId = '';
+    sections.forEach(s => { if (mid >= s.offsetTop) activeId = s.id; });
+    navAnchors.forEach(a => {
+      const href = a.getAttribute('href')?.replace('#', '');
+      a.style.color = href === activeId ? 'var(--fg)' : '';
+    });
+  }, { passive: true });
+
+  // ── Bento card 3D tilt (desktop only) ────────────────────
+  if (canHover && !reduced) {
+    document.querySelectorAll('.bento-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r   = card.getBoundingClientRect();
+        const rx  = ((e.clientY - r.top)  / r.height - 0.5) * -6;
+        const ry  = ((e.clientX - r.left) / r.width  - 0.5) *  6;
+        card.style.transform = `translateY(-6px) perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
   }
 
-  setInterval(cycleCardHighlight, 2200);
+  // ── Case row hover pad fix ────────────────────────────────
+  // Already handled in CSS via padding transition
 
-  // ── Status dot blinking ────────────────────────────────────
-  // Already handled via CSS animation
-
-  // ── Console easter egg ─────────────────────────────────────
-  console.log(
-    '%c EBS Tech ',
-    'background: linear-gradient(135deg,#7C3AED,#22D3EE); color:#fff; font-size:20px; font-weight:900; padding:8px 18px; border-radius:8px;'
-  );
-  console.log(
-    '%c Software · IA · Martech | Sistemas inteligentes para empresas que querem escalar.',
-    'color: #A855F7; font-size: 13px;'
-  );
-  console.log('%c https://wa.me/5565984193431', 'color:#22D3EE; font-size:12px;');
+  // ── Console branding ──────────────────────────────────────
+  const s = 'background: linear-gradient(135deg,#C2A878,#8B5CF6); color:#fff; font-size:16px; font-weight:900; padding:8px 18px; border-radius:4px;';
+  console.log('%c EBS Tech ', s);
+  console.log('%c IA · Automação · Software | ebstech.com.br', 'color:#C2A878; font-size:12px; font-family:monospace;');
+  console.log('%c wa.me/5565984193431', 'color:#FF5500; font-size:11px; font-family:monospace;');
 
 })();
