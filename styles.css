@@ -1339,6 +1339,177 @@ button { cursor: none; border: none; background: none; font: inherit; }
   letter-spacing: 0.08em;
 }
 
+/* ── Case Featured (Rebranding) ──────────────────────────── */
+.case-row--featured {
+  grid-template-columns: 1fr;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--r-lg);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.case-row--featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--purple), var(--mint));
+}
+
+.case-row--featured:hover {
+  background: var(--surface-2);
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+.case-row--featured .case-results {
+  flex-direction: row;
+  gap: 40px;
+  text-align: left;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.case-tag--gold {
+  color: var(--gold);
+  background: rgba(251, 191, 36, 0.12);
+}
+
+.cri-sup {
+  font-size: 0.5em;
+  color: var(--fg-3);
+}
+
+/* Before/After Logo Evolution */
+.case-brand-evolution {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.case-brand-card {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: border-color var(--t-mid);
+}
+
+.case-brand--after {
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.08);
+}
+
+.case-brand-label {
+  display: block;
+  padding: 8px 14px;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.case-brand--after .case-brand-label {
+  color: var(--gold);
+  border-bottom-color: rgba(251, 191, 36, 0.2);
+}
+
+.case-brand-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  padding: 20px;
+  background: var(--bg);
+}
+
+.case-brand-img img {
+  max-height: 110px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.case-brand-arrow {
+  color: var(--fg-3);
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* Highlights grid */
+.case-brand-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 24px 0 20px;
+}
+
+.case-brand-hi {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+
+.case-brand-hi-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.case-brand-hi strong {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--fg);
+  margin-bottom: 2px;
+}
+
+.case-brand-hi span {
+  font-size: 0.72rem;
+  color: var(--fg-3);
+  line-height: 1.5;
+}
+
+/* Case link */
+.case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--mint);
+  border-bottom: 1px solid rgba(194, 168, 120, 0.3);
+  padding-bottom: 2px;
+  transition: color var(--t-fast), border-color var(--t-fast);
+}
+
+.case-link:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .case-row--featured { padding: 28px 20px; }
+  .case-row--featured:hover { padding-left: 20px; padding-right: 20px; }
+  .case-row--featured .case-results { flex-direction: column; gap: 16px; }
+  .case-brand-evolution { flex-direction: column; }
+  .case-brand-arrow { transform: rotate(90deg); }
+  .case-brand-highlights { grid-template-columns: 1fr; }
+}
+
 /* ============================================================
    PROCESS
 ============================================================ */
@@ -1505,16 +1676,12 @@ button { cursor: none; border: none; background: none; font: inherit; }
   gap: 16px;
 }
 
-.footer-brand > :first-child {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  display: flex;
-}
-
 .footer-logo-img {
-  height: 44px;
+  height: 38px;
   width: auto;
+  max-width: 160px;
   display: block;
+  object-fit: contain;
   margin-bottom: 8px;
 }
 
